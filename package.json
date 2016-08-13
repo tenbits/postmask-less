@@ -1,0 +1,15 @@
+{
+  "name": "postmask-less",
+  "version": "1.0.7",
+  "description": "Less optimizer for postmask",
+  "author": "Alexander Kit (alex.kit@atmajs.com)",
+  "main": "lib/optimize.js",
+  "license": "MIT",
+  "dependencies": {
+    "less": "^2.7.1"
+  },
+  "devDependencies": {
+    "atma": "latest",
+    "maskjs": ">=0.56.1"
+  }
+}
