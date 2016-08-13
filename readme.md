@@ -1,50 +1,40 @@
-[PostMask Babel Compiler](https://github.com/atmajs/postmask)
+[PostMask Less Compiler](https://github.com/atmajs/postmask)
 -----
-[![Build Status](https://travis-ci.org/tenbits/postmask-babel.svg?branch=master)](https://travis-ci.org/tenbits/postmask-babel)
-[![NPM version](https://badge.fury.io/js/postmask-babel.svg)](http://badge.fury.io/js/postmask-babel)
+[![Build Status](https://travis-ci.org/tenbits/postmask-less.svg?branch=master)](https://travis-ci.org/tenbits/postmask-less)
+[![NPM version](https://badge.fury.io/js/postmask-less.svg)](http://badge.fury.io/js/postmask-less)
 
 Compiles functions in `mask` templates to es5
 
 ### Configurate
 
-`mask.cfg('postmask-babel', BabelOptions);`
+`mask.cfg('postmask-less', LessOptions);`
 
-> Default: `{"presets":["es2015"]}`
+> Default: `{}`
 
 
-### Runtime
+### Runtime (_inprocess_)
 
-Transform scripts at runtime. Use this only in some demos and in dev, not for production.
+Transform styles at runtime. Use this only in some demos and in dev, not for production.
 
 ###### Usage
 
 ```bash
-npm i babel-standalone --save-dev
-npm i postmask-babel --save-dev
-npm i maskjs --save
-```
-
-```html
-<script src="/node_modules/babel-standalone/babel.min.js"></script>
-<script src="/node_modules/maskjs/lib/mask.js"></script>
-<script src="/node_modules/postmask-babel/runtime.js"></script>
+npm i postmask-less --save-dev
 ```
 
 ```mask
-define Foo {
-    function onRenderStart () {
-        this.$.someWidget({
-            onUpdate (...args) {
-                console.log('foo')
-            }
-        });
+style {
+    @color: red;
+    h4 {
+        background: @color;
     }
 }
+h4 > 'Foo'
 ```
 
 ### Optimizer
 
-Defines optimizers to compile functions, slots, and other scripts to es5. Can be used as standalone module, but also as a plugin for `postmask`.
+Defines optimizers to compile style less content to css. Can be used as standalone module, but also as a plugin for `postmask`.
 
 
 ----
